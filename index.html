@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ButterMod Version Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #f1f1f1;
+      padding: 20px;
+    }
+    .version-card {
+      background: #2e2e2e;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .version-card h3 {
+      margin: 0;
+    }
+    .version-card button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🧈 ButterMod Versions</h1>
+
+<div id="version-list"></div>
+
+<script>
+const versions = [
+  {
+    version: "v1.0.0",
+    date: "",
+    changelog: "Initial release of ButterMod.",
+    download: "buttermod-5.0.0-neoforge-1.21.4.jar_Decompiler.com.zip"
+  },
+  {
+    version: "v1.5.0",
+    date: "",
+    changelog: "",
+    download: "buttermod-1.5.0-neoforge-1.21.4.jar_Decompiler.com.zip"
+  },
+  {
+    version: "v1.2.0",
+    date: "",
+    changelog: "",
+    download: ""
+  }
+];
+
+const container = document.getElementById('version-list');
+versions.forEach(ver => {
+  const card = document.createElement('div');
+  card.className = 'version-card';
+  card.innerHTML = `
+    <h3>${ver.version} <span style="font-size:0.8em; color:#aaa;">(${ver.date})</span></h3>
+    <p>${ver.changelog}</p>
+    <a href="${ver.download}" download><button>Download</button></a>
+  `;
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
